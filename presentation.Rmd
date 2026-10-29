@@ -1,7 +1,7 @@
 ---
-title: "Presentation title"
-subtitle: "Presentation subtitle (if any)"
-author: "Team name <br> Names of team members"
+title: "Factors Affecting Rent Prices"
+subtitle: "How certain major factors affect rent"
+author: "R-Squared <br> Aarnav, Patrick , Miguel"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -27,7 +27,7 @@ install.packages('xaringan')
 ```{r load-packages, include = FALSE}
 # Add any additional packages you need to this chunk
 library(tidyverse)
-library(tidymodels)
+#library(tidymodels)   temporory COMMENTING TILL PACKAGE IS INSTALLED
 library(palmerpenguins)
 library(knitr)
 library(xaringanthemer)
