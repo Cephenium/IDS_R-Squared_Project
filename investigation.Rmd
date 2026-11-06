@@ -58,6 +58,13 @@ Filtered_ames %>%
   ggplot(aes(x = price)) + 
   geom_boxplot()
 
+Filtered_ames %>% 
+  ggplot(aes(x = price, y = Lot.Area)) + 
+  geom_point()
+
+Filtered_ames %>% 
+  ggplot(aes(y = price, x = Lot.Area)) + 
+  geom_point()
 
 
 
