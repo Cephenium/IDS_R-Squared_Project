@@ -23,6 +23,49 @@ library(tidyverse)
 # load your data here and any pre-processing/cleaning 
 #  that you need for your report.
 
+load("~/IDS_R-Squared_Project/data/ames.rda")
+
+
+
+# clean data 
+Filtered_ames <- ames %>% 
+  
+  select(!c( 
+             Bsmt.Exposure , 
+             BsmtFin.Type.1 , 
+             BsmtFin.SF.1 , 
+             BsmtFin.Type.2 , 
+             BsmtFin.SF.2 , 
+             Bsmt.Unf.SF , 
+             Garage.Cars , 
+             Pool.Area , 
+             Pool.QC       )) %>% 
+ 
+    filter(Lot.Area < 100000 ) %>% 
+  
+   mutate(
+     
+     MS.SubClass_Cat = case_when(
+       MS.SubClass == 020 ~ "1-STORY 1946 & NEWER ALL STYLES",
+       MS.SubClass == 030 ~ "1-STORY 1945 & OLDER",
+       MS.SubClass == 040 ~ "1-STORY W/FINISHED ATTIC ALL AGES",
+       MS.SubClass == 045 ~ "1-1/2 STORY - UNFINISHED ALL AGES",
+       MS.SubClass == 050 ~ "1-1/2 STORY FINISHED ALL AGES",
+       MS.SubClass == 060 ~ "2-STORY 1946 & NEWER",
+       MS.SubClass == 070 ~ "2-STORY 1945 & OLDER",
+       MS.SubClass == 075 ~ "2-1/2 STORY ALL AGES",
+       MS.SubClass == 080 ~ "SPLIT OR MULTI-LEVEL",
+       MS.SubClass == 085 ~ "SPLIT FOYER",
+       MS.SubClass == 090 ~ "DUPLEX - ALL STYLES AND AGES",
+       MS.SubClass == 120 ~ "1-STORY PUD (Planned Unit Development) - 1946 & NEWER",
+       MS.SubClass == 150 ~ "1-1/2 STORY PUD - ALL AGES",
+       MS.SubClass == 160 ~ "2-STORY PUD - 1946 & NEWER",
+       MS.SubClass == 180 ~ "PUD - MULTILEVEL - INCL SPLIT LEV/FOYER",
+       MS.SubClass == 190 ~ "2 FAMILY CONVERSION - ALL STYLES AND AGES",
+     )
+  
+) # %>%  select(!c(MS.SubClass))
+
 
 
 

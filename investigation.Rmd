@@ -34,7 +34,7 @@ load("~/IDS_R-Squared_Project/data/ames.rda")
 ```{r Clean-data}
 # clean your data 
 Filtered_ames <- ames %>% 
-  
+  #removing columns with little data and irrelevant or extra data
   select(!c( 
              Bsmt.Exposure , 
              BsmtFin.Type.1 , 
@@ -45,9 +45,7 @@ Filtered_ames <- ames %>%
              Garage.Cars , 
              Pool.Area , 
              Pool.QC       )) %>% 
- 
-    filter(Lot.Area < 100000 ) %>% 
-  
+  #changing 3 digit code to character data (more descriptive)
    mutate(
      
      MS.SubClass_Cat = case_when(
@@ -69,7 +67,14 @@ Filtered_ames <- ames %>%
        MS.SubClass == 190 ~ "2 FAMILY CONVERSION - ALL STYLES AND AGES",
      )
   
-) # %>%  select(!c(MS.SubClass))
+)  %>%
+
+#Removing weird or wrong data
+filter(Lot.Area < 100000 )
+
+#removing extra columns post processing that my not be required
+
+# %>%  select(!c(MS.SubClass))
 
 
 
@@ -105,6 +110,9 @@ Filtered_ames %>%
 Filtered_ames %>% 
   ggplot(aes(y = price, x = MS.SubClass, colour = MS.SubClass_Cat)) + 
   geom_boxplot()
+
+ # +  facet_wrap(~MS.SubClass , scales = "free_y")  #theme(legend.position = "none")
+
 
 
 
