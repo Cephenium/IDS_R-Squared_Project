@@ -35,8 +35,7 @@ load("~/IDS_R-Squared_Project/data/ames.rda")
 # clean your data 
 Filtered_ames <- ames %>% 
   
-  select(!c( Order , 
-             PID , 
+  select(!c( 
              Bsmt.Exposure , 
              BsmtFin.Type.1 , 
              BsmtFin.SF.1 , 
@@ -47,7 +46,7 @@ Filtered_ames <- ames %>%
              Pool.Area , 
              Pool.QC       )) %>% 
  
-   filter(Lot.Area < 100000 ) %>% 
+    filter(Lot.Area < 40000 ) %>% 
   
    mutate(
      
@@ -70,7 +69,7 @@ Filtered_ames <- ames %>%
        MS.SubClass == 190 ~ "2 FAMILY CONVERSION - ALL STYLES AND AGES",
      )
   
-) %>%  select(!c(MS.SubClass))
+) # %>%  select(!c(MS.SubClass))
 
 
 
@@ -102,6 +101,10 @@ Filtered_ames %>%
   ggplot(aes(y = price, x = Lot.Area, colour = MS.SubClass_Cat)) + 
   geom_point()
 
+
+Filtered_ames %>% 
+  ggplot(aes(y = price, x = MS.SubClass, colour = MS.SubClass_Cat)) + 
+  geom_boxplot() +facet_wrap(Filtered_ames , MS.SubClass_Cat)
 
 
 
