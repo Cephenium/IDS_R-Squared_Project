@@ -41,4 +41,24 @@ load("~/IDS_R-Squared_Project/data/ames.rda")
 ```
 
 
+```{r Initial-analysis}
+ames %>% 
+  select(price) %>% 
+  summarise(
+    mean_price = mean(price),
+    median_price = median(price),
+    sd_price = sd(price))
 
+ames %>% 
+  ggplot(aes(x = price)) + 
+  geom_histogram(bins = 20)
+
+ames %>% 
+  ggplot(aes(x = price)) + 
+  geom_boxplot()
+
+
+
+
+
+```
