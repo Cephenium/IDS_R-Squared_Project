@@ -46,7 +46,7 @@ Filtered_ames <- ames %>%
              Pool.Area , 
              Pool.QC       )) %>% 
  
-    filter(Lot.Area < 40000 ) %>% 
+    filter(Lot.Area < 100000 ) %>% 
   
    mutate(
      
@@ -104,7 +104,7 @@ Filtered_ames %>%
 
 Filtered_ames %>% 
   ggplot(aes(y = price, x = MS.SubClass, colour = MS.SubClass_Cat)) + 
-  geom_boxplot() +facet_wrap(Filtered_ames , MS.SubClass_Cat)
+  geom_boxplot()
 
 
 
