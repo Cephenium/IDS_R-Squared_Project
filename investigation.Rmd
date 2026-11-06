@@ -33,7 +33,8 @@ load("~/IDS_R-Squared_Project/data/ames.rda")
 
 ```{r Clean-data}
 # clean your data 
-
+Filtered_ames <- ames %>% select(!c(Order , PID , Bsmt.Exposure , BsmtFin.Type.1 , BsmtFin.SF.1 , BsmtFin.Type.2 , BsmtFin.SF.2 , Bsmt.Unf.SF , Garage.Cars , Pool.Area , Pool.QC
+)) %>% filter(Lot.Area < 100000 )
 
 
 
@@ -42,18 +43,18 @@ load("~/IDS_R-Squared_Project/data/ames.rda")
 
 
 ```{r Initial-analysis}
-ames %>% 
+Filtered_ames %>% 
   select(price) %>% 
   summarise(
     mean_price = mean(price),
     median_price = median(price),
     sd_price = sd(price))
 
-ames %>% 
+Filtered_ames %>% 
   ggplot(aes(x = price)) + 
   geom_histogram(bins = 20)
 
-ames %>% 
+Filtered_ames %>% 
   ggplot(aes(x = price)) + 
   geom_boxplot()
 
