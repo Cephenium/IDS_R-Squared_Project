@@ -27,7 +27,7 @@ install.packages('xaringan')
 ```{r load-packages, include = FALSE}
 # Add any additional packages you need to this chunk
 library(tidyverse)
-#library(tidymodels)   temporory COMMENTING TILL PACKAGE IS INSTALLED
+library(tidymodels)
 library(palmerpenguins)
 library(knitr)
 library(xaringanthemer)

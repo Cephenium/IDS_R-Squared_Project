@@ -17,17 +17,28 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load-lib, message = FALSE}
 library(tidyverse)
 # Add any other libraries here
-load("~/IDS_R-Squared_Project/data/ames.rda")
+
 
 ```
 
 
 ```{r load-data}
 # load your data 
+load("~/IDS_R-Squared_Project/data/ames.rda")
+
+
+
+```
+
+
+```{r Clean-data}
+# clean your data 
+
 
 
 
 
 ```
+
 
 
