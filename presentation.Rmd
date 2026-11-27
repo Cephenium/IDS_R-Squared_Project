@@ -101,13 +101,16 @@ style_xaringan(
 
 class: center, middle
 
-## A statement of the overall goal / research question
+## Our Research Question!
+
+#How do different factors influence the price of houses in Ames, Iowa?
+
 
 ---
 
 class: inverse, center, middle
 
-# Section title
+# Introduction
 
 ---
 
