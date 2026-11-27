@@ -121,3 +121,32 @@ Filtered_ames %>%
 # In the second graph we are plotting the same data, but in this case we use a box plot to be able to identify, median, quartiles and lower and upper values easier. Some of these uper values are around 600,000+ in price.
 # In the next two scatter plots, we see Lot.Area plot against price with many different variables being shown in the plot to be able to identify which ones make the variation in cost more significant. For example we see that houses with 1-story 1946 and newer styles are more expensive than houses with other characteristics like 1946 or older even though they have similar Lot.Area.
 # In the final graph ( box plot) we see price plotted against every sub class variable. We can see that houses being built before or after 1946 have a significant effect on prices. Furthermore, the subclass with higher spread would be 1-story 1946 & newer all styles. Also, variables like 1/2 story - unfinished all ages have the smallest spread on the graph. Variables with higher spread might suggest that there are other characteristics from those houses that can impact the prices.
+```{r Linear models}
+
+ames_mod_lot_area <- linear_reg() %>% 
+  set_engine("lm") %>% 
+  fit(price ~ Lot.Area, data = Filtered_ames)
+tidy(ames_mod_lot_area)
+
+ames_mod_year <- linear_reg() %>% 
+  set_engine("lm") %>% 
+  fit(price ~ Year.Built, data = Filtered_ames)
+tidy(ames_mod_year)
+
+ames_mod_building <- linear_reg() %>% 
+  set_engine("lm") %>% 
+  fit(price ~ Bldg.Type, data = Filtered_ames)
+tidy(ames_mod_building)
+
+Filtered_ames %>% 
+ggplot(aes(y = Neighborhood, x = price)) + 
+  geom_col()
+
+
+
+
+
+
+
+
+```
