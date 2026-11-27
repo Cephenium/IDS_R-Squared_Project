@@ -117,3 +117,7 @@ Filtered_ames %>%
 
 
 ```
+# The first graph shows a histogram of the different prices of houses in Ames, Iowa and the count of each of them. As we see on the graph the most common price range is around 100,000 and 200,000 as we see on the graph with a count of +750. This graph shows us the spread of prices and how common they are in Ames,Iowa.
+# In the second graph we are plotting the same data, but in this case we use a box plot to be able to identify, median, quartiles and lower and upper values easier. Some of these uper values are around 600,000+ in price.
+# In the next two scatter plots, we see Lot.Area plot against price with many different variables being shown in the plot to be able to identify which ones make the variation in cost more significant. For example we see that houses with 1-story 1946 and newer styles are more expensive than houses with other characteristics like 1946 or older even though they have similar Lot.Area.
+# In the final graph ( box plot) we see MS.SubClass plotted against Price with also each variable being a different box plot inside the graph to see the changes between them. For example 2 story houses with similar MS.SubClass vary significant in price depending if they were built in previously or after 1946.
